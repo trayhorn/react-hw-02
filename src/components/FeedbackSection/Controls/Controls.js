@@ -4,7 +4,7 @@ import s from './Controls.module.css';
 export default function Controls({
   goodReview,
   neutralReview,
-  badReview
+  badReview,
 }) {
   return (
     <div className={s.container}>

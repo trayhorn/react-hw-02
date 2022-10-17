@@ -7,7 +7,7 @@ class FeedbackControls extends Component {
   state = {
     good: 0,
     neutral: 0,
-    bad: 0
+    bad: 0,
   }
 
   goodReview = () => {
@@ -34,7 +34,17 @@ class FeedbackControls extends Component {
     })
   }
 
-  countTotalFeedback()
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  }
+
+  countPositiveFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    const total = good + neutral + bad;
+    return Math.round(good / total * 100);
+  }
+
 
   render() {
     return (
@@ -49,6 +59,8 @@ class FeedbackControls extends Component {
           good={this.state.good}
           neutral={this.state.neutral}
           bad={this.state.bad}
+          total={this.countTotalFeedback}
+          positiveFeedback={this.countPositiveFeedback}
         />
       </div>
     )
