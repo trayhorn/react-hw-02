@@ -1,9 +1,10 @@
+import s from './App.module.css';
 import React, { Component } from 'react'
+import Section from './Section/Section';
 import Controls from './Controls/Controls';
 import Statistics from './Statistics/Statistics';
 
-
-class FeedbackControls extends Component {
+class App extends Component {
   state = {
     good: 0,
     neutral: 0,
@@ -48,24 +49,28 @@ class FeedbackControls extends Component {
 
   render() {
     return (
-      <div>
-        <Controls
-          goodReview={this.goodReview}
-          neutralReview={this.neutralReview}
-          badReview={this.badReview}
-        />
+      <div className={s.app}>
+        <Section title="Please leave Feedback">
+          <Controls
+            goodReview={this.goodReview}
+            neutralReview={this.neutralReview}
+            badReview={this.badReview}
+          />
+        </Section>
 
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback}
-          positiveFeedback={this.countPositiveFeedback}
-        />
+        <Section title="Statistics">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback}
+            positiveFeedback={this.countPositiveFeedback}
+          />
+        </Section>
       </div>
     )
   }
 }
 
 
-export default FeedbackControls;
+export default App;

@@ -7,8 +7,7 @@ export default function Controls({
   badReview,
 }) {
   return (
-    <div className={s.container}>
-      <h2 className={s.text}>Please leave Feedback</h2>
+    <div className={s.box}>
       <button
         className={s.button}
         type='button'
