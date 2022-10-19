@@ -1,4 +1,5 @@
-import s from './Statistics.module.css'
+import s from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 export default function Statistics({
   good,
@@ -21,4 +22,12 @@ export default function Statistics({
       </p>
     </div>
   )
+}
+
+Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.func,
+  positiveFeedback: PropTypes.func,
 }

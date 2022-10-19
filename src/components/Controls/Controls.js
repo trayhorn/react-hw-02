@@ -1,5 +1,5 @@
 import s from './Controls.module.css';
-
+import PropTypes from 'prop-types';
 
 export default function Controls({options, onLeaveFeedback}) {
   return (
@@ -18,4 +18,8 @@ export default function Controls({options, onLeaveFeedback}) {
       })}
     </div>
   )
+}
+
+Controls.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string),
 }
