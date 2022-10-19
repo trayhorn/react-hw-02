@@ -1,31 +1,21 @@
 import s from './Controls.module.css';
 
 
-export default function Controls({
-  goodReview,
-  neutralReview,
-  badReview,
-}) {
+export default function Controls({options, onLeaveFeedback}) {
   return (
     <div className={s.box}>
-      <button
-        className={s.button}
-        type='button'
-        onClick={goodReview}>
-        Good
-      </button>
-      <button
-        className={s.button}
-        type='button'
-        onClick={neutralReview}>
-        Neutral
-      </button>
-      <button
-        className={s.button}
-        type='button'
-        onClick={badReview}>
-        Bad
-      </button>
+      {options.map(option => {
+        return (
+          <button
+            type='button'
+            className={s.button}
+            onClick={() => onLeaveFeedback(option)}
+            key={option}
+          >
+            {option}
+          </button>
+        )
+      })}
     </div>
   )
 }
