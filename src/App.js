@@ -4,6 +4,7 @@ import Section from './components/Section';
 import Controls from './components/Controls';
 import Statistics from './components/Statistics';
 import Notification from './components/Notification';
+import ReviewForm from './components/Form/ReviewForm';
 
 class App extends Component {
   state = {
@@ -56,6 +57,9 @@ class App extends Component {
             ) : (
               <Notification message="There is no feedback" />
             )}
+        </Section>
+        <Section title="Your review">
+          <ReviewForm />
         </Section>
       </div>
     )
