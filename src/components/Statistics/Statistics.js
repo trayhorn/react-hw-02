@@ -9,7 +9,7 @@ export default function Statistics({
   positiveFeedback
 }) {
   return (
-    <div className={s.box}>
+    <div>
       <p className={s.text}>Good: {good}</p>
       <p className={s.text}>Neutral: {neutral}</p>
       <p className={s.text}>Bad: {bad}</p>

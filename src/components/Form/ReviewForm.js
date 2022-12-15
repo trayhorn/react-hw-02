@@ -1,5 +1,13 @@
+import s from './ReviewForm.module.css';
 import { Component } from "react";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
+import { useFormik } from 'formik';
+import { Checkbox } from '@mui/material';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 const initialValues = {
   textarea: '',
@@ -24,38 +32,24 @@ export default class ReviewForm extends Component {
         <Form
           autoComplete="off"
         >
-          <div>
-            <label>
-              Please leave a detailed review
-              <Field name="textarea"></Field>
-            </label>
-          </div>
-          <div>
-            <div>
-              <label>
-                Service
-                <Field type="checkbox" name="serviceRate"
-                />
-              </label>
-            </div>
-            <div>
-              <label>
-                Prices
-                <Field type="checkbox" name="priceRate"
-                />
-            </label>
-            </div>
-            <div>
-              <label>
-                Location
-                <Field type="checkbox" name="locationRate"
-                />
-          </label>
-            </div>
-          </div>
+           <Box
+            sx={{
+              width: 500,
+              maxWidth: '100%',
+            }}
+          >
+            <TextField name="textarea" fullWidth label="Your feedback" id="fullWidth" />
+          </Box>
+          <FormGroup className={s.formGroup}>
+            <FormControlLabel control={<Checkbox />} label="Extra" />
+            <FormControlLabel name='serviceRate' control={<Checkbox />} label="Service" />
+            <FormControlLabel control={<Checkbox />} label="Location" />
+          </FormGroup>
           <button type="submit">Submit</button>
+          <Button variant="contained">Submit</Button>
         </Form>
       </Formik>
     )
   }
 }
+

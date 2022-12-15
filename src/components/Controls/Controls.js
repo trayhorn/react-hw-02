@@ -1,4 +1,5 @@
 import s from './Controls.module.css';
+import Button from '@mui/material/Button';
 import PropTypes from 'prop-types';
 
 export default function Controls({options, onLeaveFeedback}) {
@@ -6,14 +7,13 @@ export default function Controls({options, onLeaveFeedback}) {
     <div className={s.box}>
       {options.map(option => {
         return (
-          <button
-            type='button'
-            className={s.button}
+          <Button 
+            variant="contained"
             onClick={() => onLeaveFeedback(option)}
             key={option}
           >
             {option}
-          </button>
+          </Button>
         )
       })}
     </div>
