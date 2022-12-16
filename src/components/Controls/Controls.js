@@ -7,7 +7,7 @@ export default function Controls({options, onLeaveFeedback}) {
     <div className={s.box}>
       {options.map(option => {
         return (
-          <Button 
+          <Button
             variant="contained"
             onClick={() => onLeaveFeedback(option)}
             key={option}

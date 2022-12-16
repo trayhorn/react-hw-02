@@ -1,10 +1,12 @@
 import s from './App.module.css';
-import React, { Component } from 'react'
+import { Component } from 'react';
 import Section from './components/Section';
 import Controls from './components/Controls';
 import Statistics from './components/Statistics';
 import Notification from './components/Notification';
 import ReviewForm from './components/Form/ReviewForm';
+
+
 
 class App extends Component {
   state = {
