@@ -9,7 +9,7 @@ export default function Controls({options, onLeaveFeedback}) {
         return (
           <Button
             variant="contained"
-            onClick={() => onLeaveFeedback(option)}
+            // onClick={() => onLeaveFeedback(option)}
             key={option}
           >
             {option}

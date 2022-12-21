@@ -1,55 +1,10 @@
 import s from './App.module.css';
 import { Component } from 'react';
-import { useState } from 'react';
 import Section from './components/Section';
 import Controls from './components/Controls';
 import Statistics from './components/Statistics';
 import Notification from './components/Notification';
 import ReviewForm from './components/Form/ReviewForm';
-
-// const AppHooks = () => {
-//   const [good, setGood] = useState(0);
-//   const [neutral, setNeutral] = useState(0);
-//   const [bad, setBad] = useState(0);
-
-//   const goodFeedback = () => {
-//     setGood(good + 1);
-//   }
-//   const neutralFeedback = () => {
-//     setNeutral(neutral + 1);
-//   }
-//   const badFeedback = () => {
-//     setBad(bad + 1);
-//   }
-
-//   return (
-//     <div className={s.app}>
-//       <Section title="Please leave Feedback">
-//         <Controls
-//           options={options}
-//           onLeaveFeedback={this.onLeaveFeedback}
-//         />
-//       </Section>
-
-//       <Section title="Statistics">
-//         {this.countTotalFeedback() > 0 ? (
-//           <Statistics
-//             good={good}
-//             neutral={neutral}
-//             bad={bad}
-//             total={this.countTotalFeedback}
-//             positiveFeedback={this.countPositiveFeedback}
-//           />
-//           ) : (
-//             <Notification message="There is no feedback" />
-//           )}
-//       </Section>
-//       <Section title="Your review">
-//         <ReviewForm />
-//       </Section>
-//     </div>
-//   )
-// }
 
 class App extends Component {
   state = {
